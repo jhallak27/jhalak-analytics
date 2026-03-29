@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhalak Jain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6366f1; /* Glowing Indigo */
+            --dark-bg: #0f172a; /* Deep Navy Black */
+            --pattern-color: rgba(99, 102, 241, 0.07); /* Very Subtle Pattern */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+
+        /* --- SECTION 1: HERO (NEW GEOMETRIC PATTERN DESIGN) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            
+            /* Modern Geometric Pattern (Code-Generated) */
+            background-color: var(--dark-bg);
+            background-image: 
+                linear-gradient(30deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
+                linear-gradient(150deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
+                linear-gradient(30deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
+                linear-gradient(150deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
+                linear-gradient(60deg, rgba(255,255,255,0.01) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.01) 75.5%, rgba(255,255,255,0.01)),
+                linear-gradient(60deg, rgba(255,255,255,0.01) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.01) 75.5%, rgba(255,255,255,0.01));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+
+        /* Glowing Aura Effect (No Image) */
+        .hero::before {
+            content: ''; position: absolute; width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            top: -200px; right: -200px; opacity: 0.2; filter: blur(100px);
+        }
+        
+        .hero::after {
+            content: ''; position: absolute; width: 400px; height: 400px;
+            background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+            bottom: -150px; left: -150px; opacity: 0.15; filter: blur(80px);
+        }
+
+        .hero-content { z-index: 2; padding: 0 20px; }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 10vw, 5.5rem);
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -3px;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .professional-title {
+            font-size: 1.6rem;
+            color: #a5b4fc;
+            font-weight: 600;
+            margin: 15px 0 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-skills-line {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .resume-btn {
+            background: white; color: var(--dark-bg);
+            padding: 18px 45px; border-radius: 50px;
+            text-decoration: none; font-weight: 800;
+            display: inline-flex; align-items: center; gap: 12px;
+            transition: 0.3s;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            border: 2px solid white;
+        }
+
+        .resume-btn:hover { background: transparent; color: white; transform: translateY(-3px); }
+
+        /* --- COMMON SECTION STYLES --- */
+        .section { padding: 90px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-header { font-size: 2.3rem; font-weight: 800; margin-bottom: 40px; color: var(--text-main); text-align: left; }
+
+        /* --- ABOUT BOX --- */
+        .about-box {
+            background: white; padding: 45px; border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.03); margin-bottom: 60px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .about-box p { font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); margin: 0; }
+
+        /* --- SKILLS GRID --- */
+        .skills-container {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white; padding: 35px; border-radius: 24px;
+            text-align: center; border: 1px solid #f1f5f9; transition: 0.3s;
+        }
+
+        .skill-card:hover { border-color: var(--primary); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(99,102,241,0.08); }
+
+        .skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 18px; display: block; }
+
+        /* --- PROJECTS & CERTIFICATES --- */
+        .project-card {
+            background: white;
+            padding: 35px; border-radius: 28px;
+            border-left: 6px solid var(--primary);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-top: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
+        }
+
+        .project-card h3 { margin: 0 0 15px 0; font-size: 1.5rem; color: var(--text-main); }
+        .project-card p { color: var(--text-muted); line-height: 1.7; margin: 8px 0; font-size: 1.05rem; }
+
+        .tag {
+            display: inline-block; background: #e0e7ff; color: #4338ca;
+            padding: 5px 14px; border-radius: 8px; font-size: 0.8rem;
+            font-weight: bold; margin-top: 15px; margin-right: 8px;
+        }
+
+        /* --- CONTACT --- */
+        .contact-section { background: #f1f5f9; padding: 120px 20px; text-align: center; position: relative; }
+        
+        .contact-links { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 50px; z-index: 1; position: relative; }
+
+        .contact-item {
+            background: white; padding: 20px 35px; border-radius: 18px;
+            text-decoration: none; color: var(--text-main); font-weight: 700;
+            display: flex; align-items: center; gap: 14px; border: 1px solid #cbd5e1;
+            transition: 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .contact-item:hover { background: var(--dark-bg); color: white; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 60px; color: #94a3b8; font-size: 0.9rem; background: #f1f5f9; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jhalak Jain</h1>
+            <div class="professional-title">Data Analyst</div>
+            
+            <p class="hero-skills-line">
+                Turning complex datasets into clear, visual stories. <br>
+                Specializing in Power BI Dashboards, SQL, and Python.
+            </p>
+
+            <a href="/static/JhalakJain.pdf" target="_blank" class="resume-btn">
+                <i class="fa-solid fa-file-pdf"></i> View My Resume
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-header">About Me</h2>
+        <div class="about-box">
+            <p>I am a detail-oriented Data Analyst with a passion for problem-solving. I enjoy taking messy raw data and transforming it into clean, actionable dashboards. My goal is to apply my analytical mindset to solve real-world challenges through structured data analysis.</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-card"><i class="fa-brands fa-python"></i><strong>Python</strong></div>
+            <div class="skill-card"><i class="fa-solid fa-database"></i><strong>SQL & DBMS</strong></div>
+            <div class="skill-card"><i class="fa-solid fa-table"></i><strong>Excel</strong></div>
+            <div class="skill-card"><i class="fa-solid fa-chart-column"></i><strong>Power BI</strong></div>
+            <div class="skill-card"><i class="fa-solid fa-broom"></i><strong>Data Cleaning</strong></div>
+            <div class="skill-card"><i class="fa-solid fa-eye"></i><strong>Data Visualization</strong></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-header">Projects</h2>
+        <div class="project-card">
+            <h3><i class="fa-solid fa-chart-pie"></i> Zeto Sales Dashboard | Power BI</h3>
+            <p>Developed an interactive dashboard to analyse sales, orders, and customer trends.</p>
+            <p>Cleaned and transformed data using Power Query and created KPIs and visuals.</p>
+            <span class="tag">Power BI</span> <span class="tag">Power Query</span> <span class="tag">Data Visualization</span>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <h2 class="section-header">Certifications</h2>
+        
+        <div class="project-card" style="border-left-color: #10b981;">
+            <h3><i class="fa-solid fa-award" style="color: #10b981;"></i> Tata Group Data Analytics Job Simulation</h3>
+            <p>Completed via Forage (2025). Gained hands-on experience in business data analysis.</p>
+        </div>
+
+        <div class="project-card" style="border-left-color: #10b981;">
+            <h3><i class="fa-solid fa-award" style="color: #10b981;"></i> Introduction To Computer Training</h3>
+            <p>By Spoken Tutorial Project, IIT Bombay. Mastered the fundamentals of computing.</p>
+        </div>
+
+        <div class="project-card" style="border-left-color: #10b981;">
+            <h3><i class="fa-solid fa-award" style="color: #10b981;"></i> The Complete Internship</h3>
+            <p>Data Analyst internship at Coding Cloud, working on real-world data projects.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2 style="font-weight: 800; font-size: 2.7rem; margin-bottom: 15px;">Let's Connect</h2>
+        <div class="contact-links">
+            <a href="mailto:kittuj575@gmail.com" class="contact-item">
+                <i class="fa-solid fa-envelope"></i> kittuj575@gmail.com
+            </a>
+            <a href="tel:+917017410286" class="contact-item">
+                <i class="fa-solid fa-phone"></i> +917017410286
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Jhalak Jain
+    </footer>
+
+</body>
+</html>
